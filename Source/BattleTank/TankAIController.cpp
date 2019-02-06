@@ -1,7 +1,14 @@
 // Copyright (c) JLSA:
 
 #include "TankAIController.h"
-#include "Runtime/Engine/Classes/Engine/World.h"
+#include "Runtime/Engine/Classes/GameFramework/PlayerController.h"
+
+void ATankAIController::Tick(float DeltaTime)
+{
+	Super::Tick(DeltaTime);
+
+	AimTowardsCrosshair();
+}
 
 ATank* ATankAIController::GetControlledTank() const
 {
@@ -13,6 +20,12 @@ ATank* ATankAIController::GetPlayerTank() const
 	auto PlayerPawn = GetWorld()->GetFirstPlayerController()->GetPawn();
 	if (!PlayerPawn) return nullptr;
 	return Cast<ATank>(PlayerPawn);
+}
+
+void ATankAIController::AimTowardsCrosshair()
+{
+	if (!GetControlledTank()) return;
+
 }
 
 void ATankAIController::BeginPlay()
