@@ -1,6 +1,7 @@
 // Copyright (c) JLSA:
 
 #include "TankAIController.h"
+#include "Tank.h"
 #include "Runtime/Engine/Classes/GameFramework/PlayerController.h"
 
 void ATankAIController::BeginPlay()

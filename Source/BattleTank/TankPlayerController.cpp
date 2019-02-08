@@ -1,6 +1,7 @@
 // Copyright (c) JLSA:
 
 #include "TankPlayerController.h"
+#include "Tank.h"
 #include "Runtime/Engine/Classes/Engine/World.h"
 
 

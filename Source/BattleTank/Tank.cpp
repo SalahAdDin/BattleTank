@@ -1,6 +1,7 @@
 // Copyright (c) JLSA:
 
 #include "Tank.h"
+#include "TankAimingComponent.h"
 
 // Sets default values
 ATank::ATank()
