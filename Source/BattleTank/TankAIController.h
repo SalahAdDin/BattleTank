@@ -8,7 +8,7 @@
 #include "TankAIController.generated.h"
 
 /**
- * 
+ *
  */
 UCLASS()
 class BATTLETANK_API ATankAIController : public AAIController
@@ -21,5 +21,5 @@ private:
 
 	ATank* GetControlledTank() const;
 	ATank* GetPlayerTank() const;
-	
+
 };
