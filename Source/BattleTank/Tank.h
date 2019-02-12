@@ -47,7 +47,7 @@ private:
 		float LaunchSpeed = 4000.f; // 1000m/s, TODO: find sensible default
 
 	UPROPERTY(EditAnywhere, Category = Setup)
-		TSubclassOf<AProjectile> Projectile;
+		TSubclassOf<AProjectile> ProjectileBlueprint;
 
 	// Local barrel reference for spawning projectile
 	UTankBarrel* Barrel = nullptr;
