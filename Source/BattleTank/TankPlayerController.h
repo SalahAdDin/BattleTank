@@ -1,4 +1,4 @@
-// Copyright (c) JLSA:
+// Copyright (c) JLSA.
 
 #pragma once
 
