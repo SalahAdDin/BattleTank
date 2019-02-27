@@ -1,14 +1,3 @@
-// Copyright (c) JLSA.
-
-#pragma once
-
-#include "CoreMinimal.h"
-#include "GameFramework/Actor.h"
-#include "SprungWheel.generated.h"
-
-class UPhysicsConstraintComponent;
-class USphereComponent;
-
 UCLASS()
 class BATTLETANK_API ASprungWheel : public AActor
 {
@@ -17,8 +6,8 @@ class BATTLETANK_API ASprungWheel : public AActor
 public:
 	// Sets default values for this actor's properties
 	ASprungWheel();
-
-	void virtual Tick(float DeltaTime) override;
+	// Called every frame
+	virtual void Tick(float DeltaTime) override;
 
 	void AddDrivingForce(float ForceMagnitude);
 
@@ -28,6 +17,11 @@ protected:
 
 private:
 	void SetupConstraint();
+
+	UFUNCTION()
+		void OnHit(UPrimitiveComponent* HitComponent, AActor* OtherActor, UPrimitiveComponent* OtherComp, FVector NormalImpulse, const FHitResult& Hit);
+
+	void ApplyForce();
 
 	// Components
 	UPROPERTY(VisibleAnywhere, Category = "Components")
@@ -42,4 +36,5 @@ private:
 	UPROPERTY(VisibleAnywhere, Category = "Components")
 		UPhysicsConstraintComponent* AxleWheelConstraint = nullptr;
 
+	float TotalForceMagnitudeThisFrame = 0;
 };
